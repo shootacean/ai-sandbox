@@ -1,7 +1,9 @@
 // Hello World TypeScript Script
-function sayHello(): void {
+export function sayHello(): void {
   console.log("Hello, World!");
 }
 
 // メイン実行
-sayHello();
+if (require.main === module) {
+  sayHello();
+}
