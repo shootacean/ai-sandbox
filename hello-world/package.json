@@ -6,20 +6,22 @@
     "build": "tsc",
     "start": "node dist/index.js",
     "dev": "ts-node src/index.ts",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:ui": "vitest --ui"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@types/jest": "^30.0.0",
     "@types/node": "^24.0.1",
-    "jest": "^30.0.0",
-    "ts-jest": "^29.4.0",
+    "@vitest/coverage-v8": "^3.2.3",
+    "@vitest/ui": "^3.2.3",
     "ts-node": "^10.9.2",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5",
+    "vitest": "^3.2.3"
   }
 }
