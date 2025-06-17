@@ -1,0 +1,50 @@
+{
+  "name": "@fizzbuzz/engine",
+  "version": "2.0.0",
+  "description": "A configurable FizzBuzz generator with multiple output formats and custom rules",
+  "tasks": {
+    "dev": "deno run --allow-read src/main.ts",
+    "start": "deno run --allow-read src/main.ts",
+    "test": "deno test --allow-all",
+    "test:watch": "deno test --allow-all --watch",
+    "test:coverage": "deno test --allow-all --coverage=coverage",
+    "build": "deno compile --allow-read --output=dist/fizzbuzz src/main.ts",
+    "fmt": "deno fmt",
+    "fmt:check": "deno fmt --check",
+    "lint": "deno lint",
+    "check": "deno check src/**/*.ts tests/**/*.ts"
+  },
+  "imports": {
+    "@std/testing": "jsr:@std/testing@^1.0.0",
+    "@std/assert": "jsr:@std/assert@^1.0.0"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./cli": "./src/cli/commands.ts",
+    "./engine": "./src/core/engine.ts",
+    "./formatters": "./src/core/formatters.ts",
+    "./rules": "./src/core/rules.ts",
+    "./types": "./src/types/index.ts"
+  },
+  "compilerOptions": {
+    "lib": ["deno.ns", "es2020", "dom"],
+    "strict": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false
+  },
+  "fmt": {
+    "useTabs": false,
+    "lineWidth": 100,
+    "indentWidth": 2,
+    "semiColons": true,
+    "singleQuote": true,
+    "proseWrap": "preserve"
+  },
+  "lint": {
+    "rules": {
+      "tags": ["recommended"]
+    }
+  }
+}
